@@ -1,11 +1,16 @@
-/*
- * THIS IS THE CODE TEMPLETE
+/* This sample playing a short clip of Haddaway-What is love.
+ * Two piezo buzzers is required for this tune.
+ * [PIN8]----[+]BUZZER01[-]---\
+ *                             |-----[GND]
+ * [PIN7]----[+]BUZZER02[-]---/
+ * 
  * Code done by James Wang(Lekkon7193) and thanks for everyone's help.
  * Inspired by "Blink without Delay".
  * Use Micros() instead of tone and delay to drive square wave oscillation.
  * Tested by Arduino Uno.(Runs on SPEEEduino Board).
  * Pin7 and Pin8 are outputting two diffrent melodies
  * The LED indicates when the board is playing melodies.
+ * PS: IF YOU WANT TO CONTOL SOUND INTENSITY, USE analogWrite() instead of digitalWrite().
  */
 
 #include "note_period.h"
@@ -24,10 +29,18 @@ unsigned long previoustime3 = 0;
 unsigned long previoustime4 = 0;
 unsigned int counter1 = 0 ;
 unsigned int counter2 = 0 ;
-const int totalnotes_01 = 100; 
-// INDICATE THE NUMBER OF NOTES YOU WANT TO PLAYED ON BUZZER 1. EXCEED THIS NUMBER MEAN ROLL OVER AGAIN.
-const int totalnotes_02 = 100; 
-// INDICATE THE NUMBER OF NOTES YOU WANT TO PLAYED ON BUZZER 2. EXCEED THIS NUMBER MEAN ROLL OVER AGAIN.
+const int totalnotes_01 = 0; 
+/* INDICATE THE NUMBER OF NOTES YOU WANT TO PLAYED ON BUZZER 1. 
+ * EXCEED THIS NUMBER MEANLOOP BACK TO START AGAIN.
+ * DO NOT PUT NUMBER MORE THAN WHAT YOU HAVE FOR THE NUMBER OF NOTE.
+ * BY DOING THAT THE COUNTER CAN GET INTO TROUBLE.
+ */
+const int totalnotes_02 = 0; 
+/* INDICATE THE NUMBER OF NOTES YOU WANT TO PLAYED ON BUZZER 2. 
+ * EXCEED THIS NUMBER MEANLOOP BACK TO START AGAIN.
+ * DO NOT PUT NUMBER MORE THAN WHAT YOU HAVE FOR THE NUMBER OF NOTE.
+ * BY DOING THAT THE COUNTER CAN GET INTO TROUBLE.
+ */
 void setup() {
   pinMode(buzzer_1_Pin, OUTPUT);
   pinMode(buzzer_2_Pin, OUTPUT);
@@ -64,7 +77,7 @@ void loop() {
     }
   if (currentwait - previoustime3 >= notelen8){
     previoustime3 = currentwait;
-    Serial.println(interval_01);
+    Serial.println("NOTE.POS.BUZZER01:");
     Serial.println(counter1);
     digitalWrite(buzzer_1_Pin,LOW);
     if (counter1 <= totalnotes_01){
@@ -73,10 +86,13 @@ void loop() {
     }
     else{counter1 = 0;digitalWrite(buzzer_1_Pin,LOW);digitalWrite(ledPin, LOW);}
     }
-
+/*  ASSUME THAT THE MELODY FOR PIN8 IS YOUR MAIN MELODY,
+*   WHEN PIN8 STARTRED TO PLAY, THE ONBOARD LED LIT UP (PIN 13 IS HIGH).
+*   AFTER PIN8 PLAYED THE LAST NOTE, THE LED IS OFF (PIN 13 IS LOW).
+*/ 
    if (currentwait - previoustime4 >= notelen7){
     previoustime4 = currentwait;
-    Serial.println(interval_02);
+    Serial.println("NOTE.POS.BUZZER02:");
     Serial.println(counter2);
     digitalWrite(buzzer_2_Pin,LOW);
     if (counter2 < totalnotes_02){
