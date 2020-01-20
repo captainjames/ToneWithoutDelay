@@ -12,5 +12,5 @@
  * THIS SEQUENCE IS FOR BUZZER 2.
  */
 unsigned int notelength7[]={
-
+  1000,
   };
