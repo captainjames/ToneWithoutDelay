@@ -12,5 +12,5 @@
  * THIS SEQUENCE IS FOR BUZZER 1.
  */
 int note8length[]={ 
-
+  1000,
   };
