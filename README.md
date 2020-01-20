@@ -16,7 +16,7 @@ A oscillating signal is produced.
 Traditionally we use tone() and delay() function so that the onboard processor can use PWM to handle the swiching process hence we can get a square-wave tone output.
 However this only allow one tone to be played at one time. This makes the arduino unable to output multiple melodies.
 
-Hence to play diffrent melodies on one sigle board, we need to disregard the tone() and delay() function.
+Hence to play diffrent melodies on one single board, we need to disregard the tone() and delay() function.
 
 In this program, a microsecond timer is used to count the period of the note.
 We can program the board to make one cycle of switch for the period of time, so the squarewave can oscillate at the correct frequency.
