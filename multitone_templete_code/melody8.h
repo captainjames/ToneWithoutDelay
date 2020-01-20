@@ -5,5 +5,5 @@
  */
  
 int melody8[]= { 
-
+ NOTE_REST,
 };
