@@ -30,5 +30,5 @@ This is the first version of the program.
 Tested With SPEEEduino v1.1(issued by Singapore Polytechnic). 
 This code support Arduino Uno and other arduino boards with a DRAM >= 2048 Bytes.
 
-James Wang 
+James Wang (Lekkon7193)
 19/01/2020
