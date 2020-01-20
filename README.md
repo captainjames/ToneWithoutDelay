@@ -8,7 +8,7 @@ Two（or more) series of musics notes and their respective durations are stored 
 Loops are set saperately for each serie of notes 
 so that you can set how many notes to be played before they start again from the first note.
 
-How Does it works:
+How does it work:
 
 To play a note, the respective pins switch from LOW to HIGH to LOW (or HIGH-LOW-HIGH) for the note's period time.
 A oscillating signal is produced.
