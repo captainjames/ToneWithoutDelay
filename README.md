@@ -27,7 +27,7 @@ Hence, we can set the value of period and duration of each note and make them in
 So that You can connect multiple piezo-buzzers or speakers for multiple channels of tone output pins.
 
 This is the first version of the program.
-Tested With SPEEEduino v1.1(issued by Singapore Polytechnic). 
+Tested With SPEEEduino v1.1(Arduino board from Singapore Polytechnic). 
 This code support Arduino Uno and other arduino boards with a DRAM >= 2048 Bytes.
 
 James Wang (Lekkon7193)
